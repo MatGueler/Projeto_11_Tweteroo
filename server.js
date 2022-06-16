@@ -20,6 +20,7 @@ server.post('/sign-up', (req, res) => {
         avatar: avatar
     }
     users.push(login)
+    console.log('OK!')
     res.send(users)
 })
 
@@ -45,6 +46,7 @@ server.post('/tweets', (req, res) => {
         tweet: tweet
     }
     tweets.push(body)
+    console.log('OK!')
     res.send(tweets)
 })
 
