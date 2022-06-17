@@ -67,4 +67,15 @@ server.post('/tweets', (req, res) => {
     }
 })
 
+server.get('/tweets/:username', (req, res) => {
+    let userTweet = []
+    const username = req.params.username;
+    for (let counter = 0; counter < tweets.length; counter++) {
+        if (tweets[counter].username === username) {
+            userTweet.push(tweets[counter])
+        }
+    }
+    res.send(userTweet)
+})
+
 server.listen(5000)
